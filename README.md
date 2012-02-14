@@ -2,6 +2,11 @@
 
 This repositiory contains my local vim config.
 
+## Installation
+Run `./install.sh` to setup enviroment by:
+
+* Symlinking the `vimrc` file to `~/.vimrc`
+* Initialize and update plugins by `git submodules`
 
 ## Links
 Usefull links for configurating vim.
