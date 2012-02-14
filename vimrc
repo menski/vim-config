@@ -1,3 +1,8 @@
+:""" Pathogen plugin
+runtime bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+
 """ Change <leader> to ,
 let mapleader = ','
 
@@ -9,10 +14,10 @@ set directory=~/.vim/tmp
 set mouse=a
 
 """ Shortcut to edit vimrc
-nmap <leader>v :tabedit $MYVIMRC<CR>
+nmap <leader>v :tabedit <C-R>=resolve($MYVIMRC)<CR><CR>
 
 """ Auto source vimrc on write
-au BufWritePost .vimrc source $MYVIMRC
+au BufWritePost vimrc source $MYVIMRC
 
 """ Additional editing command with path expansion
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
