@@ -48,3 +48,6 @@ set linebreak
 
 """ Show line breaking character
 set showbreak=↳
+
+""" Default tab behavior
+set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
