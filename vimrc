@@ -1,6 +1,10 @@
 """ Change <leader> to ,
 let mapleader = ','
 
+""" Save tmp and swp files to ~/.vim/tmp
+set backupdir=~/.vim/tmp
+set directory=~/.vim/tmp
+
 """ Enable mouse
 set mouse=a
 
