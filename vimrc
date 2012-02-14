@@ -58,3 +58,7 @@ set showbreak=↳
 
 """ Default tab behavior
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
+""" Spell checking
+set nospell spelllang=en_us
+nmap <leader>s :set spell!<CR>
