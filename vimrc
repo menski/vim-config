@@ -13,6 +13,19 @@ set directory=~/.vim/tmp
 """ Enable mouse
 set mouse=a
 
+""" Statusline config
+""" always show statusline
+set laststatus=2
+""" show partial command
+set showcmd
+""" report all changes
+set report=0
+""" use wildmode and wildmenu
+set wildmode=full
+set wildmenu
+""" statusline
+set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
+
 """ Shortcut to edit vimrc
 nmap <leader>v :tabedit <C-R>=resolve($MYVIMRC)<CR><CR>
 
