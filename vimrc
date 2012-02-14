@@ -41,7 +41,7 @@ nmap <leader>l :set list!<CR>
 set nolist
 
 """ Adjust list (invisible) characters
-set listchars=tab:»-,trail:·,eol:¶,extends:>,precedes:<
+set listchars=tab:»-,trail:▸,eol:¶,extends:>,precedes:<
 
 """ Set linebreak
 set linebreak
