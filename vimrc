@@ -33,3 +33,12 @@ map <leader>7 7gt
 map <leader>8 8gt
 map <leader>9 9gt
 map <leader>0 :tablast<CR>
+
+""" Toggle list: show invisible characters
+nmap <leader>l :set list!<CR>
+
+""" Default no list
+set nolist
+
+""" Adjust list (invisible) characters
+set listchars=tab:»-,trail:·,eol:¶,extends:>,precedes:<
