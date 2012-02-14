@@ -14,6 +14,13 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 """ Auto source vimrc on write
 au BufWritePost .vimrc source $MYVIMRC
 
+""" Additional editing command with path expansion
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
+
 """ Map windows movment to <CTRL>-[hjkl]
 map <C-h> <C-w>h
 map <C-j> <C-w>j
