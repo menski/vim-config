@@ -42,3 +42,9 @@ set nolist
 
 """ Adjust list (invisible) characters
 set listchars=tab:»-,trail:·,eol:¶,extends:>,precedes:<
+
+""" Set linebreak
+set linebreak
+
+""" Show line breaking character
+set showbreak=↳
