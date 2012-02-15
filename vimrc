@@ -143,3 +143,9 @@ nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><C
 
 """ Open urls in buffer with urlview
 nnoremap <leader>O :silent !urlview %<CR>:redraw!<CR>
+
+""" SnipMate: goto ~/.vim/snippets directory
+nmap <leader>s :tabe ~/.vim/snippets<CR>
+
+""" SnipMate: reload all snippets after editing
+au BufWritePost *.snippets call ReloadAllSnippets()
