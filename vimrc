@@ -126,7 +126,7 @@ set hlsearch
 """ Toggle highlighting
 nmap <F3> :set hlsearch!<CR>
 
-""" Toggle paste mode
+""" Toggle paste modeA
 set pastetoggle=<leader>p
 
 """ Folding
@@ -176,7 +176,7 @@ let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
 let g:SuperTabDefaultCompletionType = "context"
 
-""" pep8: map pep8 <leader>p8
+""" pep8: map pep8 <F9>
 let g:pep8_map='<F9>'
 
 """ pyflakes: disable quickfix for pyflakes
@@ -184,3 +184,6 @@ let g:pyflakes_use_quickfix = 0
 
 """ set foldlevel und foldcolumn for vimoutliner documents
 autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
+
+""" TaskList: map tasklist to <leader>td
+map <leader>td <Plug>TaskList
