@@ -171,3 +171,9 @@ map <leader>c <c-_><c-_>
 " let g:SuperTabMappingBackward = '<s-c-space>'
 let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
+
+""" pep8: map pep8 <leader>p8
+let g:pep8_map='<F9>'
+
+""" pyflakes: disable quickfix for pyflakes
+let g:pyflakes_use_quickfix = 0
