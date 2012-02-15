@@ -9,6 +9,9 @@ let mapleader = ','
 """ Bind W to w (typo)
 command! W :w
 
+""" Colorscheme wombat
+colorscheme wombat256i
+
 """ Save tmp and swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
@@ -125,6 +128,7 @@ set pastetoggle=<leader>p
 
 """ Folding
 set foldmethod=marker
+set foldlevel=99
 nnoremap <space> za
 vnoremap <space> zf
 
