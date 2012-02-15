@@ -16,6 +16,9 @@ colorscheme wombat256i
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
 
+""" Set hidden so unsaved changes can be hidden
+set hidden
+
 """ Enable mouse
 set mouse=a
 
@@ -187,3 +190,6 @@ autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
 
 """ TaskList: map tasklist to <leader>td
 map <leader>td <Plug>TaskList
+
+""" Command-T: remap file search to <leader>f
+nnoremap <silent> <leader>f :CommandT<CR>
