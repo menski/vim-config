@@ -193,3 +193,6 @@ map <leader>td <Plug>TaskList
 
 """ Command-T: remap file search to <leader>f
 nnoremap <silent> <leader>f :CommandT<CR>
+
+nmap <leader>a <Esc>:Ack!
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
