@@ -177,3 +177,6 @@ let g:pep8_map='<F9>'
 
 """ pyflakes: disable quickfix for pyflakes
 let g:pyflakes_use_quickfix = 0
+
+""" set foldlevel und foldcolumn for vimoutliner documents
+autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
