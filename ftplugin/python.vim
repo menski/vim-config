@@ -7,3 +7,4 @@ setlocal nowrap
 setlocal list
 setlocal foldmethod=indent
 setlocal colorcolumn=80
+setlocal omnifunc=pythoncomplete#Complete

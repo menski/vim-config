@@ -139,6 +139,9 @@ vnoremap <space> zf
 set showmatch
 set matchpairs+=<:>
 
+""" Completion
+set completeopt=menuone,longest,preview
+
 """ Bind make to <F12>
 nmap <F12> :make
 
@@ -171,6 +174,7 @@ map <leader>c <c-_><c-_>
 " let g:SuperTabMappingBackward = '<s-c-space>'
 let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
+let g:SuperTabDefaultCompletionType = "context"
 
 """ pep8: map pep8 <leader>p8
 let g:pep8_map='<F9>'
