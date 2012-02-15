@@ -149,3 +149,6 @@ nmap <leader>s :tabe ~/.vim/snippets<CR>
 
 """ SnipMate: reload all snippets after editing
 au BufWritePost *.snippets call ReloadAllSnippets()
+
+""" Gundo: toogle gundo view
+nnoremap <F5> :GundoToggle<CR>
