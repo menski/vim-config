@@ -59,6 +59,9 @@ nmap <leader>v :tabedit <C-R>=resolve($MYVIMRC)<CR><CR>
 """ Reload vimrc
 nmap <leader>V :source $MYVIMRC<CR>
 
+""" Source file in buffer
+nmap <leader>S :source %<CR>
+
 """ Auto source vimrc on write
 ""au BufWritePost vimrc source $MYVIMRC
 
@@ -155,4 +158,16 @@ nmap <leader>s :tabe ~/.vim/snippets<CR>
 au BufWritePost *.snippets call ReloadAllSnippets()
 
 """ Gundo: toogle gundo view
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F4> :GundoToggle<CR>
+
+""" NERDTree: toogle nerdtree
+nnoremap <F2> :NERDTreeToggle<CR>
+
+""" tComment: remap tcomment command
+map <leader>c <c-_><c-_>
+
+""" supertab: remap supertab from <tab> <c-space>
+" let g:SuperTabMappingForward = '<c-space>'
+" let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabMappingForward = '<nul>'
+let g:SuperTabMappingBackward = '<s-nul>'
