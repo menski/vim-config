@@ -9,6 +9,9 @@ let mapleader = ','
 """ Bind W to w (typo)
 command! W :w
 
+""" Source man.vim for :Man command
+source /usr/share/vim/vimcurrent/ftplugin/man.vim
+
 """ Colorscheme wombat
 colorscheme wombat256i
 
