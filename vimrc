@@ -6,6 +6,9 @@ call pathogen#helptags()
 """ Change <leader> to ,
 let mapleader = ','
 
+""" Bind W to w (typo)
+command! W :w
+
 """ Save tmp and swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp
 set directory=~/.vim/tmp
@@ -13,24 +16,48 @@ set directory=~/.vim/tmp
 """ Enable mouse
 set mouse=a
 
-""" Statusline config
-""" always show statusline
+""" Cryptmethod
+set cryptmethod=blowfish
+
+""" Syntax highlighting
+syntax on
+
+""" Filetype detection
+filetype plugin indent on
+
+""" Line Numbers
+set number
+set numberwidth=1
+""" Toggle line numbering
+nmap <leader>n :set number!<CR>
+
+""" Show cursorline
+set cursorline
+
+""" Always show statusline
 set laststatus=2
-""" show partial command
+
+""" Statusline configuration
+set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
+
+""" Show partial command
 set showcmd
-""" report all changes
+
+""" Report all changes
 set report=0
-""" use wildmode and wildmenu
+
+""" Use wildmode and wildmenu
 set wildmode=full
 set wildmenu
-""" statusline
-set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
 
 """ Shortcut to edit vimrc
 nmap <leader>v :tabedit <C-R>=resolve($MYVIMRC)<CR><CR>
 
+""" Reload vimrc
+nmap <leader>V :source $MYVIMRC<CR>
+
 """ Auto source vimrc on write
-au BufWritePost vimrc source $MYVIMRC
+""au BufWritePost vimrc source $MYVIMRC
 
 """ Additional editing command with path expansion
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -77,6 +104,42 @@ set showbreak=↳
 """ Default tab behavior
 set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
+""" Indention
+set autoindent smartindent
+
 """ Spell checking
 set nospell spelllang=en_us
 nmap <leader>s :set spell!<CR>
+
+""" Searching
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+""" Toggle highlighting
+nmap <F3> :set hlsearch!<CR>
+
+""" Toggle paste mode
+set pastetoggle=<leader>p
+
+""" Folding
+set foldmethod=marker
+nnoremap <space> za
+vnoremap <space> zf
+
+""" Matching
+set showmatch
+set matchpairs+=<:>
+
+""" Bind make to <F12>
+nmap <F12> :make
+
+""" Open cmus
+map <leader>m :silent !cmus<CR>:redraw!<CR>
+
+""" Open url under cursor
+nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>:redraw!<CR>
+
+""" Open urls in buffer with urlview
+nnoremap <leader>O :silent !urlview %<CR>:redraw!<CR>
