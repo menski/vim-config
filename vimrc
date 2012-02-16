@@ -130,7 +130,7 @@ set incsearch
 set hlsearch
 
 """ Toggle highlighting
-nmap <F3> :set hlsearch!<CR>
+nmap <leader>h :set hlsearch!<CR>
 
 """ Toggle paste modeA
 set pastetoggle=<leader>p
@@ -148,9 +148,6 @@ set matchpairs+=<:>
 """ Completion
 set completeopt=menuone,longest,preview
 
-""" Bind make to <F12>
-nmap <F12> :make
-
 """ Open cmus
 map <leader>m :silent !cmus<CR>:redraw!<CR>
 
@@ -166,12 +163,6 @@ nmap <leader>s :tabe ~/.vim/snippets<CR>
 """ SnipMate: reload all snippets after editing
 au BufWritePost *.snippets call ReloadAllSnippets()
 
-""" Gundo: toogle gundo view
-nnoremap <F4> :GundoToggle<CR>
-
-""" NERDTree: toogle nerdtree
-nnoremap <F2> :NERDTreeToggle<CR>
-
 """ tComment: remap tcomment command
 map <leader>c <c-_><c-_>
 
@@ -182,8 +173,8 @@ let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
 let g:SuperTabDefaultCompletionType = "context"
 
-""" pep8: map pep8 <F9>
-let g:pep8_map='<F9>'
+""" pep8: map pep8 <leader>p
+let g:pep8_map='<leader>p'
 
 """ pyflakes: disable quickfix for pyflakes
 let g:pyflakes_use_quickfix = 0
@@ -199,3 +190,18 @@ nnoremap <silent> <leader>f :CommandT<CR>
 
 nmap <leader>a <Esc>:Ack!
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+""" TODO: document keybindings in README
+
+""" F-Keys
+""" Gundo: toogle gundo view
+nnoremap <F4> :GundoToggle<CR>
+
+""" NERDTree: toogle nerdtree
+nnoremap <F2> :NERDTreeToggle<CR>
+
+""" Tagbar: toogle tagbar with <F8>
+nmap <F8> :TagbarT
+
+""" Bind make to <F12>
+nmap <F12> :make<CR>oggle<CR>
