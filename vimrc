@@ -173,8 +173,8 @@ let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
 let g:SuperTabDefaultCompletionType = "context"
 
-""" pep8: map pep8 <leader>p
-let g:pep8_map='<leader>p'
+""" pep8: map pep8 <F8>
+let g:pep8_map='<F8>'
 
 """ pyflakes: disable quickfix for pyflakes
 let g:pyflakes_use_quickfix = 0
@@ -200,8 +200,11 @@ nnoremap <F4> :GundoToggle<CR>
 """ NERDTree: toogle nerdtree
 nnoremap <F2> :NERDTreeToggle<CR>
 
-""" Tagbar: toogle tagbar with <F8>
-nmap <F8> :TagbarT
+""" Tagbar: toogle tagbar with <F5>
+nmap <F5> :TagbarToggle<CR>
 
 """ Bind make to <F12>
-nmap <F12> :make<CR>oggle<CR>
+nmap <F12> :make<CR>
+
+""" awesome rc.lua testing
+au BufRead *awesome/rc.lua setlocal makeprg=awesome\ -k
