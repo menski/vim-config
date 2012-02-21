@@ -132,8 +132,8 @@ set hlsearch
 """ Toggle highlighting
 nmap <leader>h :set hlsearch!<CR>
 
-""" Toggle paste modeA
-set pastetoggle=<leader>p
+""" Toggle paste mode
+set pastetoggle=<F2>
 
 """ Folding
 set foldmethod=marker
@@ -198,7 +198,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <F4> :GundoToggle<CR>
 
 """ NERDTree: toogle nerdtree
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 """ Tagbar: toogle tagbar with <F5>
 nmap <F5> :TagbarToggle<CR>
@@ -208,3 +208,5 @@ nmap <F12> :make<CR>
 
 """ awesome rc.lua testing
 au BufRead *awesome/rc.lua setlocal makeprg=awesome\ -k
+
+au BufRead *.md setlocal makeprg=markdown\ %\ \\\|\ lynx\ -stdin\ -dump
