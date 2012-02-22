@@ -210,3 +210,24 @@ nmap <F12> :make<CR>
 au BufRead *awesome/rc.lua setlocal makeprg=awesome\ -k
 
 au BufRead *.md setlocal makeprg=markdown\ %\ \\\|\ lynx\ -stdin\ -dump
+
+""" Autohandle compress files
+augroup gzip
+	autocmd!
+	autocmd BufReadPre,FileReadPre     *.gz,*.Z,*.bz2 set bin
+	autocmd BufReadPost,FileReadPost   *.gz,*.Z '[,']!gunzip
+	autocmd BufReadPost,FileReadPost   *.bz2 '[,']!bunzip2
+	autocmd BufReadPost,FileReadPost   *.gz,*.Z,*.bz2 set nobin
+	autocmd BufReadPost,FileReadPost   *.gz,*.Z,*.bz2 execute ":doautocmd BufReadPost " . expand("%:r")
+	autocmd BufWritePost,FileWritePost *.gz,*.Z,*.bz2 !mv <afile> <afile>:r
+	autocmd BufWritePost,FileWritePost *.gz !gzip <afile>:r
+	autocmd BufWritePost,FileWritePost *.bz2 !bzip2 <afile>:r
+	autocmd BufWritePost,FileWritePost *.Z !compress -f <afile>:r
+	autocmd FileAppendPre              *.gz,*.Z !gunzip <afile>
+	autocmd FileAppendPre              *.bz2 !bunzip2 <afile>
+	autocmd FileAppendPre              *.gz,*.Z,*.bz2 !mv <afile>:r <afile>
+	autocmd FileAppendPost             *.gz,*.Z,*.bz2 !mv <afile> <afile>:r
+	autocmd FileAppendPost             *.gz !gzip <afile>:r
+	autocmd FileAppendPost             *.bz2 !bzip2 <afile>:r
+	autocmd FileAppendPost             *.Z !compress -f <afile>:r
+augroup END
