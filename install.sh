@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 CMDTXT="\e[0;32m[INSTALL]\e[0m"
 
