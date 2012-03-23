@@ -47,3 +47,7 @@
 [submodule "bundle/utl"]
 	path = bundle/utl
 	url = https://github.com/vim-scripts/utl.vim
+	ignore = dirty
+[submodule "bundle/gist"]
+	path = bundle/gist
+	url = https://github.com/mattn/gist-vim.git
