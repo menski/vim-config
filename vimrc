@@ -1,4 +1,4 @@
-:""" Pathogen plugin
+""" Pathogen plugin
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -13,7 +13,7 @@ command! W :w
 source /usr/share/vim/vimcurrent/ftplugin/man.vim
 
 """ Colorscheme wombat
-colorscheme wombat256i
+colorscheme default
 
 """ Save tmp and swp files to ~/.vim/tmp
 set backupdir=~/.vim/tmp
@@ -47,7 +47,7 @@ set cursorline
 set laststatus=2
 
 """ Statusline configuration
-set statusline=%<%f\ (%{&ft})%=%-19(%3l,%02c%03V%)%{fugitive#statusline()}
+set statusline=%<%n:%f\ %y[%{&ff}]%r%m%=%-19(%3l,%02c%03V%)%7(%P%)\ [%LL]\ %{fugitive#statusline()}\ [%<%1.20{getcwd()}]
 
 """ Show partial command
 set showcmd
@@ -114,13 +114,13 @@ set linebreak
 set showbreak=↳
 
 """ Default tab behavior
-set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+set tabstop=2 shiftwidth=2 softtabstop=2 noexpandtab
 
 """ Indention
 set autoindent smartindent
 
 """ Spell checking
-set nospell spelllang=en_us
+set nospell spelllang=de_de,en_us
 nmap <leader>s :set spell!<CR>
 
 """ Searching
@@ -151,9 +151,6 @@ set completeopt=menuone,longest,preview
 """ Open cmus
 map <leader>m :silent !cmus<CR>:redraw!<CR>
 
-""" Open url under cursor
-nnoremap <leader>o :silent !xdg-open <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>:redraw!<CR>
-
 """ Open urls in buffer with urlview
 nnoremap <leader>O :silent !urlview %<CR>:redraw!<CR>
 
@@ -181,6 +178,15 @@ let g:pyflakes_use_quickfix = 0
 
 """ set foldlevel und foldcolumn for vimoutliner documents
 autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
+
+""" set makeprg for tex files
+autocmd BufRead *.tex setlocal makeprg=pdflatex\ master.tex
+
+""" set makeprg for .Xresources
+autocmd BufRead .Xresources setlocal makeprg=xrdb\ ~/.Xresources
+
+""" set spelling for mails
+autocmd FileType mail set spell
 
 """ TaskList: map tasklist to <leader>td
 map <leader>td <Plug>TaskList
@@ -210,6 +216,12 @@ nmap <F12> :make<CR>
 au BufRead *awesome/rc.lua setlocal makeprg=awesome\ -k
 
 au BufRead *.md setlocal makeprg=markdown\ %\ \\\|\ lynx\ -stdin\ -dump
+
+""" Utl settings
+noremap <leader>o :Utl<CR>
+let g:utl_cfg_hdl_mt_generic = 'silent execute "!xdg-open %p &> /dev/null" | redraw!'
+let g:utl_cfg_hdl_scm_http_system = 'silent execute "!xdg-open \"%u\" &> /dev/null" | redraw!'
+let g:utl_cfg_hdl_scm_mailto = '!terminator -e "mutt %u"'
 
 """ Autohandle compress files
 augroup gzip
