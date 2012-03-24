@@ -183,7 +183,7 @@ autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
 autocmd BufRead *.tex setlocal makeprg=pdflatex\ master.tex
 
 """ set makeprg for .Xresources
-autocmd BufRead .Xresources setlocal makeprg=xrdb\ ~/.Xresources
+autocmd BufRead .Xresources setlocal makeprg=xrdb\ ~/.Xresources expandtab
 
 """ set spelling for mails
 autocmd FileType mail set spell
