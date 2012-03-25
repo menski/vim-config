@@ -179,9 +179,6 @@ let g:pyflakes_use_quickfix = 0
 """ set foldlevel und foldcolumn for vimoutliner documents
 autocmd BufRead *.otl setlocal foldlevel=0 foldcolumn=5
 
-""" set makeprg for tex files
-autocmd BufRead *.tex setlocal makeprg=pdflatex\ master.tex
-
 """ set makeprg for .Xresources
 autocmd BufRead .Xresources setlocal makeprg=xrdb\ ~/.Xresources expandtab
 
