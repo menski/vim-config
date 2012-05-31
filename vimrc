@@ -3,6 +3,9 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+"""" TOODO TEST
+set modeline
+
 """ Change <leader> to ,
 let mapleader = ','
 
@@ -67,6 +70,11 @@ nmap <leader>V :source $MYVIMRC<CR>
 
 """ Source file in buffer
 nmap <leader>S :source %<CR>
+
+""" chmod +x file in buffer
+nmap <leader>X :w<CR>:silent !chmod +x "%"<CR>:redraw!<CR>
+
+set autoread
 
 """ Auto source vimrc on write
 ""au BufWritePost vimrc source $MYVIMRC
@@ -240,3 +248,6 @@ augroup gzip
 	autocmd FileAppendPost             *.bz2 !bzip2 <afile>:r
 	autocmd FileAppendPost             *.Z !compress -f <afile>:r
 augroup END
+
+" Underline bad spelling
+hi SpellBad cterm=underline ctermbg=0 ctermfg=1

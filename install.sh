@@ -14,5 +14,8 @@ git submodule update
 git submodule foreach git submodule init
 git submodule foreach git submodule update
 
+echo -e "\n$CMDTXT Fix tex snippet"
+sed -i 's/(fold)/{{{/g;s/(end)/}}}/g' bundle/snipmate/snippets/tex.snippets
+
 echo -e "\n$CMDTXT Build Command-T"
 cd bundle/command-t/ && rake make
